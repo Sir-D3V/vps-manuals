@@ -1,6 +1,6 @@
 1. crear contraseña aleatoria con un generador
 
-   **openssl rand \-hex 24**  
+   **openssl rand -hex 24**  
      
    respuesta esperada: contraseña nueva
 
@@ -10,11 +10,11 @@
    **nano .env**
 
    respuesta esperada: se abrirá el editor  
-   **POSTGRES\_USER=postgres**  
-   **POSTGRES\_PASSWORD=pegar\_generado\_1**  
-   **N8N\_DB\_PASSWORD=pegar\_generado\_2**  
-   **CHATWOOT\_DB\_PASSWORD=pegar\_generado\_3**  
-   **METABASE\_DB\_PASSWORD=pegar\_generado\_4**
+   **POSTGRES_USER=postgres**  
+   **POSTGRES_PASSWORD=pegar_generado_1**  
+   **N8N_DB_PASSWORD=pegar_generado_2**  
+   **CHATWOOT_DB_PASSWORD=pegar_generado_3**  
+   **METABASE_DB_PASSWORD=pegar_generado_4**
 
    (contraseña de cualquier otro aplicativo tambien iria aqui )
 
@@ -34,20 +34,20 @@
        **image: pgvector/pgvector:pg16**  
        **restart: unless-stopped**  
        **environment:**  
-         **POSTGRES\_USER: \${POSTGRES\_USER}**  
-         **POSTGRES\_PASSWORD: \${POSTGRES\_PASSWORD}**  
+         **POSTGRES_USER: ${POSTGRES_USER}**  
+         **POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}**  
        **volumes:**  
-         **\- postgres\_data:/var/lib/postgresql/data**  
+         **- postgres_data:/var/lib/postgresql/data**  
        **healthcheck:**  
-         **test: \["CMD-SHELL", "pg\_isready \-U \${POSTGRES\_USER}"\]**  
+         **test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]**  
          **interval: 10s**  
          **timeout: 5s**  
          **retries: 5**  
        **networks:**  
-         **\- proxy-net**
+         **- proxy-net**
 
    **volumes:**  
-     **postgres\_data:**
+     **postgres_data:**
 
    **networks:**  
      **proxy-net:**  
@@ -55,7 +55,7 @@
 
 5. levantar servicio
 
-   **docker compose up \-d**  
+   **docker compose up -d**  
    **docker compose ps**
 
    respuesta esperada: barra de progreso con checks
@@ -63,35 +63,35 @@
 6. crear base de datos, usuarios y extensiones
 
    **cd /opt/apps/postgres**  
-   **set \-a**  
+   **set -a**  
    **source .env**  
-   **set \+a**
+   **set +a**
 
-   **docker compose exec \-T postgres psql \-U postgres \<\<EOF**  
-   **CREATE USER n8n      WITH PASSWORD '\$N8N\_DB\_PASSWORD';**  
+   **docker compose exec -T postgres psql -U postgres <<EOF**  
+   **CREATE USER n8n      WITH PASSWORD '$N8N_DB_PASSWORD';**  
    **CREATE DATABASE n8n      OWNER n8n;**  
-   **CREATE USER chatwoot WITH PASSWORD '\$CHATWOOT\_DB\_PASSWORD';**  
+   **CREATE USER chatwoot WITH PASSWORD '$CHATWOOT_DB_PASSWORD';**  
    **CREATE DATABASE chatwoot OWNER chatwoot;**  
-   **CREATE USER metabase WITH PASSWORD '\$METABASE\_DB\_PASSWORD';**  
+   **CREATE USER metabase WITH PASSWORD '$METABASE_DB_PASSWORD';**  
    **CREATE DATABASE metabase OWNER metabase;**  
-   **\\c chatwoot**  
+   **\c chatwoot**  
    **CREATE EXTENSION IF NOT EXISTS vector;**  
-   **CREATE EXTENSION IF NOT EXISTS pg\_trgm;**  
+   **CREATE EXTENSION IF NOT EXISTS pg_trgm;**  
    **EOF**
 
    respuesta esperada: listado de creaciones.
 
 7. verificar bases de datos
 
-   **docker compose exec postgres psql \-U postgres \-c "\\l"**  
-   **docker compose exec postgres psql \-U postgres \-c "\\du"**
+   **docker compose exec postgres psql -U postgres -c "\l"**  
+   **docker compose exec postgres psql -U postgres -c "\du"**
 
    respuesta esperada: paginador con tabla de bases de datos.  
    (se sale con la letra “q”)
 
 8. verificar dns interno para postgres
 
-   **docker run \--rm \--network proxy-net postgres:16-alpine pg\_isready \-h postgres \-p 5432**
+   **docker run --rm --network proxy-net postgres:16-alpine pg_isready -h postgres -p 5432**
 
    respuesta esperada: confirmación de conexiones aceptadas.
 

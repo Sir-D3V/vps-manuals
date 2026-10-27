@@ -1,14 +1,14 @@
 1. Generar nueva llave encriptada
 
-   **openssl rand \-hex 32**
+   **openssl rand -hex 32**
 
    respuesta esperada: cadena de texto aleatoria.
 
 2. Recuperar la contraseña asignada para n8n en la BD
 
-   **grep N8N\_DB\_PASSWORD /opt/apps/postgres/.env**
+   **grep N8N_DB_PASSWORD /opt/apps/postgres/.env**
 
-   respuesta esperada: N8N\_DB\_PASSWORD
+   respuesta esperada: N8N_DB_PASSWORD
 
 3. Crear archivo .env de n8n
 
@@ -16,9 +16,9 @@
    nano .env
 
    respuesta esperada: se abrirá el editor  
-   **N8N\_DB\_PASSWORD=la\_del\_paso\_2**  
-   **N8N\_ENCRYPTION\_KEY=la\_del\_paso\_1**  
-   **GENERIC\_TIMEZONE=America/Caracas**
+   **N8N_DB_PASSWORD=la_del_paso_2**  
+   **N8N_ENCRYPTION_KEY=la_del_paso_1**  
+   **GENERIC_TIMEZONE=America/Caracas**
 
    (ctrl+o , enter, ctrl+x)
 
@@ -30,7 +30,7 @@
 
 5. curl para buscar versión reciente n8n
 
-   **curl \-s https\://api.github.com/repos/n8n-io/n8n/releases/latest \| grep \-oP '"tag\_name":\\s\*"\\K\[^"\]+'**
+   **curl -s https://api.github.com/repos/n8n-io/n8n/releases/latest | grep -oP '"tag_name":\s*"\K[^"]+'**
 
    respuesta esperada: número version a pegar en paso 6
 
@@ -42,31 +42,31 @@
    respuesta esperada: se abrirá el editor  
    **services:**  
      **n8n:**  
-       **image: [docker.n8n.io/n8nio/n8n:](http://docker.n8n.io/n8nio/n8n:latest)***~~paso 5 aqui~~*  
+       **image: docker.n8n.io/n8nio/n8n:***~~paso 5 aqui~~*  
        **restart: unless-stopped**  
        **environment:**  
-         **DB\_TYPE: postgresdb**  
-         **DB\_POSTGRESDB\_HOST: postgres**  
-         **DB\_POSTGRESDB\_PORT: 5432**  
-         **DB\_POSTGRESDB\_DATABASE: n8n**  
-         **DB\_POSTGRESDB\_USER: n8n**  
-         **DB\_POSTGRESDB\_PASSWORD: \${N8N\_DB\_PASSWORD}**  
-         **N8N\_ENCRYPTION\_KEY: \${N8N\_ENCRYPTION\_KEY}**  
-         **N8N\_ENFORCE\_SETTINGS\_FILE\_PERMISSIONS: "true"**  
-         **N8N\_HOST: [n8n.mc-suministros.com](http://n8n.mc-suministros.com)**  
-         **N8N\_PROTOCOL: https**  
-         **WEBHOOK\_URL: [https\://n8n.mc-suministros.com/](https://n8n.mc-suministros.com/)**  
-         **GENERIC\_TIMEZONE: \${GENERIC\_TIMEZONE}**  
-         **TZ: \${GENERIC\_TIMEZONE}**  
-         **EXECUTIONS\_DATA\_PRUNE: "true"**  
-         **EXECUTIONS\_DATA\_MAX\_AGE: "168"**  
+         **DB_TYPE: postgresdb**  
+         **DB_POSTGRESDB_HOST: postgres**  
+         **DB_POSTGRESDB_PORT: 5432**  
+         **DB_POSTGRESDB_DATABASE: n8n**  
+         **DB_POSTGRESDB_USER: n8n**  
+         **DB_POSTGRESDB_PASSWORD: ${N8N_DB_PASSWORD}**  
+         **N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY}**  
+         **N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS: "true"**  
+         **N8N_HOST: n8n.mc-suministros.com**  
+         **N8N_PROTOCOL: https**  
+         **WEBHOOK_URL: https://n8n.mc-suministros.com/**  
+         **GENERIC_TIMEZONE: ${GENERIC_TIMEZONE}**  
+         **TZ: ${GENERIC_TIMEZONE}**  
+         **EXECUTIONS_DATA_PRUNE: "true"**  
+         **EXECUTIONS_DATA_MAX_AGE: "168"**  
        **volumes:**  
-         **\- n8n\_data:/home/node/.n8n**  
+         **- n8n_data:/home/node/.n8n**  
        **networks:**  
-         **\- proxy-net**
+         **- proxy-net**
 
    **volumes:**  
-     **n8n\_data:**
+     **n8n_data:**
 
    **networks:**  
      **proxy-net:**  
@@ -76,15 +76,15 @@
 
 7. levantar el contenedor
 
-   **cd /opt/apps/n8n && docker compose up \-d**  
+   **cd /opt/apps/n8n && docker compose up -d**  
    **docker compose ps**  
-   **docker compose logs \--tail 15 n8n**
+   **docker compose logs --tail 15 n8n**
 
-   respuesta esperada: barra de progreso \+ respectivos checks
+   respuesta esperada: barra de progreso + respectivos checks
 
 8. Registrar el usuario 
 
-   Abrir **https\://n8n.dominio.com** 
+   Abrir **https://n8n.dominio.com** 
 
    llenar formulario con nuestro usuario **cottusai.work@g**
 
