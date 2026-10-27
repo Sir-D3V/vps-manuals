@@ -6,7 +6,7 @@ Manuales operativos para configurar un VPS Debian 13 desde cero hasta producció
 
 | # | Manual | Contenido |
 |---|--------|-----------|
-| 00 | [Configuración inicial](manual-00-configuracion-inicial.md) | Timezone, SSH keys, UFW, fail2ban, unattended-upgrades, swap |
+| 00 | [Configuración inicial](manual-00-configuracion-inicial.md) | Password, update, timezone, SSH keys, UFW, fail2ban, unattended-upgrades, swap |
 | 01 | [Docker](manual-01-docker.md) | Engine + compose plugin + daemon.json (rotación de logs) |
 | 02 | [Red y directorios stack](manual-02-red-y-directorios-stack.md) | Hostname, `/opt/apps`, red `proxy-net` |
 | 03 | [Dominio y túnel](manual-03-dominio-y-tunnel.md) | Nameservers → Cloudflare, cloudflared, rutas públicas |
