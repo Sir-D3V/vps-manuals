@@ -130,4 +130,12 @@
 
     respuesta esperada: swap 4.0Gi
 
-14. Fin del manual
+14. instalar rsync (para despliegues)
+
+    ```bash
+    sudo apt install -y rsync
+    ```
+
+    respuesta esperada: lineas de descarga.
+
+15. Fin del manual
