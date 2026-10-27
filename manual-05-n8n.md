@@ -71,9 +71,9 @@
          DB_POSTGRESDB_PASSWORD: ${N8N_DB_PASSWORD}
          N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY}
          N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS: "true"
-         N8N_HOST: n8n.dominio.com
+         N8N_HOST: n8n.dominio.com  # ← sustituir dominio.com por el dominio real del cliente
          N8N_PROTOCOL: https
-         WEBHOOK_URL: https://n8n.dominio.com/
+         WEBHOOK_URL: https://n8n.dominio.com/  # ← sustituir dominio.com por el dominio real del cliente
          GENERIC_TIMEZONE: ${GENERIC_TIMEZONE}
          TZ: ${GENERIC_TIMEZONE}
          EXECUTIONS_DATA_PRUNE: "true"
@@ -106,6 +106,8 @@
 8. Registrar el usuario
 
    Abrir **https://n8n.dominio.com**
+
+   (sustituir dominio.com por el dominio real del cliente)
 
    llenar formulario con nuestro usuario **cottusai.work@g**
 

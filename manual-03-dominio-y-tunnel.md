@@ -18,6 +18,8 @@
    dig NS dominio.com +short
    ```
 
+   (sustituir dominio.com por el dominio real del cliente)
+
    respuesta esperada: dos líneas de cloudflare y no de otro server.
 
 4. localizar y eliminar los registros que apunten al antiguo host, navegar hasta:
