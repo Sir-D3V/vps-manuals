@@ -30,3 +30,5 @@
    ```
 
    respuesta esperada: cadena id red.
+
+4. Fin del manual
