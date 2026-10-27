@@ -71,9 +71,9 @@
          DB_POSTGRESDB_PASSWORD: ${N8N_DB_PASSWORD}
          N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY}
          N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS: "true"
-         N8N_HOST: n8n.mc-suministros.com
+         N8N_HOST: n8n.dominio.com
          N8N_PROTOCOL: https
-         WEBHOOK_URL: https://n8n.mc-suministros.com/
+         WEBHOOK_URL: https://n8n.dominio.com/
          GENERIC_TIMEZONE: ${GENERIC_TIMEZONE}
          TZ: ${GENERIC_TIMEZONE}
          EXECUTIONS_DATA_PRUNE: "true"

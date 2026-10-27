@@ -15,12 +15,12 @@
 3. consultar nameservers
 
    ```bash
-   dig NS mc-suministros.com +short
+   dig NS dominio.com +short
    ```
 
    respuesta esperada: dos líneas de cloudflare y no de otro server.
 
-4. navegar hasta el antiguo host entonces navegar hasta:
+4. localizar y eliminar los registros que apunten al antiguo host, navegar hasta:
 
    dashboard > domains > DNS > Records
 
