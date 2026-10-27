@@ -38,7 +38,7 @@
 
    copiar únicamente token de la cadena  **Run tunnel with Docker**
 
-   navegar hasta el el directorio  `cd /opt/apps/cloudflared/`  en caso que no exista entonces crearlo con mkdir
+   navegar hasta el directorio  `cd /opt/apps/cloudflared/`  en caso que no exista entonces crearlo con mkdir
 
    ```bash
    nano .env
@@ -52,7 +52,7 @@
 
    respuesta esperada: ninguna.
 
-6. curl para buscar versión reciente nginx
+6. curl para buscar versión reciente cloudflared
 
    ```bash
    curl -s https://api.github.com/repos/cloudflare/cloudflared/releases/latest | grep -oP '"tag_name":\s*"\K[^"]+'

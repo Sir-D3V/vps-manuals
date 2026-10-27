@@ -11,7 +11,7 @@
    sudo nano /etc/hosts
    ```
 
-   (renombrar ultima columna del 127.0.0.1)
+   (renombrar ultima columna del 127.0.1.1)
 
 2. crear directorios del stack
 

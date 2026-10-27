@@ -47,7 +47,7 @@
 
    respuesta esperada: número version a pegar en paso 6
 
-6. configurar docker composer n8n
+6. configurar docker compose n8n
 
    ```bash
    nano docker-compose.yml
