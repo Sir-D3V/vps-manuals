@@ -23,7 +23,7 @@
 
    respuesta esperada: (-04, -0400)
 
-4. generar llave ssh - local (no host)
+4. generar llave ssh - **local (no host)**
 
    ```bash
    ssh-keygen -t ed25519 -C "nombre-vps"
@@ -43,7 +43,7 @@
 
    respuesta esperada: Begin - - - End
 
-6. copiar la llave al vps para iniciar sesión sin contraseña y evitar hackeos - local (no host)
+6. copiar la llave al vps para iniciar sesión sin contraseña y evitar hackeos - **local (no host)**
 
    ```bash
    ssh-copy-id debian@11.111.11.11
