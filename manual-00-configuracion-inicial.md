@@ -29,6 +29,8 @@
    ssh-keygen -t ed25519 -C "nombre-vps"
    ```
 
+   (presionar Enter 3 veces seguidas: ruta por defecto → passphrase vacío → confirmar vacío)
+
    (en caso de querer generar segunda clave para otro equipo, solamente se podra iniciando sesion con la primera clave)
 
    respuesta esperada: cajetin de símbolos
