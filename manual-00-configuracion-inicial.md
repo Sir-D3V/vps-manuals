@@ -2,7 +2,6 @@
 
    ```bash
    ssh debian@11.111.11.11
-   passwd
    ```
 
    (sustituir ip por la real; fingerprint → “yes”; pegar 2 veces la contraseña temporal de OVH: en el login y como actual en passwd)
