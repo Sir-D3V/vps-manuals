@@ -6,9 +6,7 @@
    ssh debian@11.111.11.11
    ```
 
-   (sustituir el numero por el ip real que corresponda)
-
-   (la primera conexión preguntará “Are you sure you want to continue connecting (yes/no/[fingerprint])?” → escribir yes)
+   (sustituir ip por la real; la primera conexión pedirá confirmar el fingerprint → escribir “yes”)
 
 2. Actualizar
 
