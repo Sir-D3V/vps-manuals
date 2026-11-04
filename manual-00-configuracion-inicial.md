@@ -1,6 +1,4 @@
-1. Cambiar contraseña
-
-   (al provisionar el VPS el proveedor ofrece la opción de crear la nueva contraseña)
+1. Al provisionar el VPS el proveedor ofrece la opción de crear la nueva contraseña
 
    ```bash
    ssh debian@11.111.11.11
