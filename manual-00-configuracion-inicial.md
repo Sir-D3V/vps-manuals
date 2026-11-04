@@ -2,6 +2,14 @@
 
    (al provisionar el VPS el proveedor ofrece la opción de crear la nueva contraseña)
 
+   ```bash
+   ssh debian@11.111.11.11
+   ```
+
+   (sustituir el numero por el ip real que corresponda)
+
+   (la primera conexión preguntará “Are you sure you want to continue connecting (yes/no/[fingerprint])?” → escribir yes)
+
 2. Actualizar
 
    ```bash
