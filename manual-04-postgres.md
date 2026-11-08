@@ -76,7 +76,7 @@
 
    respuesta esperada: barra de progreso con checks
 
-6. crear base de datos, usuarios y extensiones
+6. cargar variables del .env
 
    ```bash
    cd /opt/apps/postgres
@@ -84,6 +84,12 @@
    source .env
    set +a
    ```
+
+   (para que el heredoc del paso 7 sustituya las contraseñas)
+
+   respuesta esperada: ninguna.
+
+7. crear base de datos, usuarios y extensiones
 
    ```bash
    docker compose exec -T postgres psql -U postgres <<EOF
@@ -104,7 +110,7 @@
 
    respuesta esperada: listado de creaciones.
 
-7. verificar bases de datos
+8. verificar bases de datos
 
    ```bash
    docker compose exec postgres psql -U postgres -c "\l"
@@ -114,7 +120,7 @@
    respuesta esperada: paginador con tabla de bases de datos.
    (se sale con la letra “q”)
 
-8. verificar dns interno para postgres
+9. verificar dns interno para postgres
 
    ```bash
    docker run --rm --network proxy-net postgres:16-alpine pg_isready -h postgres -p 5432
@@ -122,4 +128,4 @@
 
    respuesta esperada: confirmación de conexiones aceptadas.
 
-9. Fin del manual
+10. Fin del manual
