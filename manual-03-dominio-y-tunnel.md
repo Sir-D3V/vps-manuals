@@ -106,6 +106,8 @@
 
    respuesta esperada: listado de indicadores de conectividad.
 
+   (volver a la ventana del paso 4 en cloudflare y presionar Continue — se habilita cuando el túnel conecta)
+
 9. ir al sitio cloudflare y luego a los menu:
    networking > tunnels >
    buscar túnel previamente creado >
