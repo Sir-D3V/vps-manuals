@@ -117,6 +117,11 @@
    * **subdomain** (dejar vacío si corresponde)
    * **service url** (puerto que corresponda)
 
+   ejemplos de las 2 rutas fijas (repetir add route por cada una):
+   * web → subdomain vacío | service url: `http://web:80`
+   * n8n → subdomain: n8n | service url: `http://n8n:5678`
+   (la ruta de n8n responde una vez instalado en manual 05)
+
    nota: con respecto al site comprobar en el record
    dashboard > domains > DNS > Records
    que ya existe el registro **CNAME** el cual redirige www hacia el dominio corto.
