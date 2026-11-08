@@ -2,7 +2,13 @@
 
    domains > add domain
 
-   continuar y seguir pasos por defecto. finalmente esperar propagación.
+   continuar y seguir pasos por defecto.
+
+   en la pantalla de revisión de registros dns eliminar:
+   los records tipo “A” que apunten al antiguo host y el registro cname de godaddy (_domainconnect).
+   conservar: cname www y txt _dmarc.
+
+   finalmente esperar propagación.
 
 2. instalar utilidades dns
 
@@ -22,13 +28,13 @@
 
    respuesta esperada: dos líneas de cloudflare y no de otro server.
 
-4. localizar y eliminar los registros que apunten al antiguo host, navegar hasta:
+4. verificar que no queden registros que apunten al antiguo host, navegar hasta:
 
    dashboard > domains > DNS > Records
 
-   localizar los records tipo “A” y eliminarlos.
+   comprobar que ya no existan records tipo “A” del antiguo host ni el cname de godaddy.
 
-   localizar el registro cname de godaddy y eliminarlo también.
+   (si alguno quedó, eliminarlo aquí)
 
 5. mientras esperamos propagación, proseguimos con la creación del túnel en el dashboard de cloudflare
 
