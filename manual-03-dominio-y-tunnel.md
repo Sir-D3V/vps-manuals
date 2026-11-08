@@ -28,6 +28,8 @@
 
    respuesta esperada: dos líneas de cloudflare y no de otro server.
 
+   (si aun muestra los nameservers del registrador → esperar propagación y reintentar; domaincontrol.com = godaddy)
+
 4. verificar que no queden registros que apunten al antiguo host, navegar hasta:
 
    dashboard > domains > DNS > Records
