@@ -1,10 +1,12 @@
-1. crear contraseña aleatoria con un generador
+1. crear contraseñas aleatorias con un generador
 
    ```bash
    openssl rand -hex 24
    ```
 
-   respuesta esperada: contraseña nueva
+   (ejecutar 1 vez por cada contraseña requerida en el .env del paso 2)
+
+   respuesta esperada: contraseñas nuevas
 
 2. crear archivo .env
 
