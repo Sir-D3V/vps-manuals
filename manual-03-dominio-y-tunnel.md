@@ -174,8 +174,11 @@
 13. crear html de prueba
 
     ```bash
-    echo '<h1>MC Suministros - En construccion</h1>' > /opt/apps/web/site/index.html
+    cd /opt/apps/web/site
+    echo '<h1>MC Suministros - En construccion</h1>' > index.html
     ```
+
+    (crear el index.html dentro del directorio site)
 
     respuesta esperada: ninguna.
 
