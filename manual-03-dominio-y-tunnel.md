@@ -193,7 +193,7 @@
 
 15. Redirect www a la raíz, navegar:
 
-    Rules > Redirect Rules > Create from template
+    Rules > Redirect Rules > Create rule > plantilla “Redirect from WWW to root” > Create from template
     marcar unicamente casilla **“Preserve query string”** y finalmente botón **Deploy**.
     (ignorar advertencia “rule may not apply to your traffic”)
 
